@@ -1,0 +1,24 @@
+=Sum(Fields!Total.Value, "OrderDate")
+
+
+1. Crear el datasource a Northwind
+2. Crear el dataset "DSProveedorProducto" 
+
+SELECT  s.CompanyName as Proveedor, 
+        p.ProductName as Producto,
+        p.UnitPrice as Precio,
+        p.UnitsInStock as Stock
+
+FROM 
+Suppliers s 
+JOIN Products p on s.SupplierID = p.SupplierID
+
+3. Insertar una tabla para mostrar los campos en el orden del dataset
+4. Clic derecho en el grupo "(details)" y seleccionar "agregar grupo" / "grupo padre". Marque la casilla "add group header". Seleccione el campo PROVEEDOR
+5. Eliminar la columna "proveedor" que se repite fila a fila en la tabla (ejecute el reporte e identifique cual es la columna que va a elimiinar)
+6. Clic derecho sobre el campo Precio y seleccione "add total. Ingrese a la propiedad "expresion"  del total obtenido y modifique el SUM por AVG. 
+7. Clic derecho sobre el campo Stock y agregue un total (deje la expresion  como SUM)
+8. Formatee todos los valores a dos decimales en tanto sea moneda y entero para el campo stock
+9. Seleccione la fila del total agregado en el paso 6 y 7 y agregue una fila "gran total" con el promedio y la suma de los campos Precio y Stock al final de la tabla. 
+10. Seleccione "details" y haga clic derecho. En la propiedad Visibility de las propiedades del grupo, seleccione la opcion HIDE para que no se muestre el detalle al ejecutar el reporte y luego en "display can be toggled by " seleccione PROVEEDOR.
+11. Ejecute el reporte
